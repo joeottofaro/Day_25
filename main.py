@@ -25,10 +25,7 @@ while len(guessed_states) < 50:
     # Used to append the states not in the guessed_states list to missing_states.
     # Panadas will create a DataFrame from missing_states list then store it as a csv
     if answer_state == "Exit":
-        missing_states = []
-        for state in state_list:
-            if state not in guessed_states:
-                missing_states.append(state)
+        missing_states = [state for state in state_list if state not in guessed_states]
         new_data = pandas.DataFrame(missing_states)
         new_data.to_csv("states_to_learn.csv")
         break
