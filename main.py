@@ -21,7 +21,7 @@ state_list = data.state.to_list()
 # Loop will keep going til the user either types Exit or guesses all 50 states
 while len(guessed_states) < 50:
     answer_state = screen.textinput(title=f"{len(guessed_states)}/50 States Correct",
-                                    prompt="What's another state's name?").title()
+                                    prompt="What is a state's name?").title()
     # Used to append the states not in the guessed_states list to missing_states.
     # Panadas will create a DataFrame from missing_states list then store it as a csv
     if answer_state == "Exit":
